@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document by gsq */
+/*bkxws.com*/
+html { background:#fff; height:100%;  }
+body { height:100%; font:12px/18px Arial,Simsun,Verdan; background:#fff; color:#333; -webkit-text-size-adjust:100% }
+body, h1, h2, h3, h4, h5, h6, p, input, th, td, ul, ol, li, dl, dt, dd, form, fieldset, legend, input, textarea, select  { padding:0; margin:0 }
+h1, h2, h3, h4, h5, h6 { font-size:1em; font-weight:normal; font-family:'Microsoft Yahei',Simsun }
+ul { list-style:none }
+fieldset, img { border:0; -ms-interpolation-mode:bicubic }
+textarea, select, option, input { font:12px/1.0 arial, tahoma, \5b8b\4f53, sans-serif }
+table { border-spacing:0 }
+i, em, address { font-style:normal }
+.block { display:block!important }
+.inline { display:inline!important }
+.none { display:none!important }
+.fl { float:left }
+.fr { float:right }
+.cl { font:0/0 sans-sreif; clear:both; display:block; visibility:hidden; height:0; overflow:hidden }
+.ari { font-family:Arial }
+a { color:#333; text-decoration:none }
+a:hover { text-decoration:underline }
+.bold { font-weight:bold }
+.gray { color:#999 !important }
+.black { color:#000 !important }
+.red { color:#EF5944 !important }
+.ora { color:#e86320 !important }
+.green { color:#457a2a!important }
+.blue { color:#1B7DC6 !important }
+.col6 { color:#666 !important }
+.colc { color:#ccc !important }
+.underline { text-decoration:underline }
+.underline:hover { text-decoration:none }
+.em2 { text-indent:2em }
+.tl { text-align:left!important }
+.tr { text-align:right!important }
+.tc { text-align:center!important }
+.font10 { font-size:10px; -webkit-text-size-adjust:none }
+.font12 { font-size:12px }
+.font13 { font-size:13px }
+.font14 { font-size:14px }
+.font16 { font-size:16px }
+.font18 { font-size:18px }
+.noborder { border:none !important }
+.nopadding { padding:0 !important }
+.nomargin { margin:0 !important }
+.nomr { margin-right:0 !important }
+.nopr { padding-right:0 !important }
+.nobold { font-weight:normal !important }
+.noline:hover { text-decoration:none; cursor:text }
+.posi_re { position:relative!important }
+.posi_ab { position:absolute!important }
+.posi_st { position:static!important }
+.vm { vertical-align:middle }
+.btn { padding:3px 15px; color:#fff; font-size:14px; text-align:center; background:#f39c4e; border:1px solid #f09645; display:inline-block; cursor:pointer }
+.btn:hover { background:#f69742 }
+#container { width:100%; text-align:left }
+.pageBar { text-align:right; padding:20px 0; font-family:Arial }
+.pageBar span, .pageBar a { padding:0 9px; height:24px; line-height:24px; display:inline-block; margin:0 2px; border:1px solid #ccc; color:#333 }
+.pageBar span { background-color:#fff; border-color:#fff; text-decoration:none }
+.pageBar span.on { background-color:#f6f6f6; border:1px solid #ccc; color:#333; font-weight:bold }
+.pageBar a:hover { background:#f6f6f6; color:#1b7dc6; text-decoration:none }
+.pageBar .nolink, .pageBar .nolink:hover { background-color:#fff; border:1px solid #ddd; color:#ccc }
+.login_bg { background:url(../images/admin/login_bg.jpg) no-repeat center 0 }
+.login_log { margin:auto 0; position:absolute; top:200px; left:50%; margin-left:-125px; width:254px }
+.login_log .tab { width:250px; margin:0 auto; }
+.login_log .tab thead img { margin-bottom:12px }
+.login_log .tab tbody td { padding:5px 0 6px }
+#TxtUName, #TxtUPass, #Txtcheckcode { width:205px; padding:0 10px 0 35px; height:35px; line-height:35px; background:url(../images/admin/text_bg.png) no-repeat; border:none; color:#333; font-size:14px; font-weight:; font-family:arial }
+#TxtUPass { background-position:0 -46px }
+#Txtcheckcode { width:138px; padding:0 10px; background-position:0 -92px }
+.Txtcode { width:86px; height:35px }
+#btnLogin { width:250px; height:36px; background:url(../images/admin/login_btn.png) no-repeat; border:none; cursor:pointer }

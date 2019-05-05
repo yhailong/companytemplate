@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A10EB020-E51B-4C7E-92CE-270AA58E39B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompanyT.Bll</RootNamespace>
+    <AssemblyName>CompanyT.Bll</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MSXML2">
+      <HintPath>..\web\dll\Interop.MSXML2.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YUTIAN.Tools">
+      <HintPath>..\web\dll\YUTIAN.Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\BllAdmActHistory.cs" />
+    <Compile Include="admin\BllAdmGroupRoleList.cs" />
+    <Compile Include="admin\BllAdmLoginHistory.cs" />
+    <Compile Include="admin\BllAdmUser.cs" />
+    <Compile Include="admin\BllAdmUserGroup.cs" />
+    <Compile Include="admin\BllAdmUserModule.cs" />
+    <Compile Include="BaseFun.cs" />
+    <Compile Include="Bll_Base.cs" />
+    <Compile Include="company\BllCompanyNews.cs" />
+    <Compile Include="company\BllCompanyNewsClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user\BllUserDetail.cs" />
+    <Compile Include="user\BllUserLogin.cs" />
+    <Compile Include="user\BllUserLoginLog.cs" />
+    <Compile Include="user\BllUserLoginQQ.cs" />
+    <Compile Include="user\BllUserLoginWeibo.cs" />
+    <Compile Include="user\BllUserLoginWeiXin.cs" />
+    <Compile Include="user\BllUserSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompanyT.Entity\CompanyT.Entity.csproj">
+      <Project>{5da5bbfe-60e7-4ac3-a414-014fde4872a3}</Project>
+      <Name>CompanyT.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompanyT.SqlClient\CompanyT.SqlClient.csproj">
+      <Project>{300c14df-2194-4a2b-9c6f-31df26762ee5}</Project>
+      <Name>CompanyT.SqlClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

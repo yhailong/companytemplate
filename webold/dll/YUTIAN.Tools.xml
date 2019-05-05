@@ -1,0 +1,1368 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YUTIAN.Tools</name>
+    </assembly>
+    <members>
+        <member name="M:YUTIAN.Tools.ExecMySql.SqlExecNoquery(System.String)">
+            <summary>
+            执行无需返回结果的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <returns>返回相应的比数</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.SqlExecNoquery(System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行无需返回结果、带参数的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="parm">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.GetDataSet(System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.GetDataSet(System.String,System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="sqlconn">数据库连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.GetDataSet(System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.GetTableList``1(System.String)">
+            <summary>
+            执行sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.GetTableList``1(System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行带参数的Sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="cmdParms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecMySql.InsertOrUpdateData``1(``0)">
+            <summary>
+            新增或修改数据表数据
+            </summary>
+            <typeparam name="T">对应要修改或新增的实体类型</typeparam>
+            <param name="_myclass">对应要修改或新增的实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:YUTIAN.Tools.ExecSqlConn">
+            <summary>
+            执行带连接字符串的sql server
+            </summary>
+        </member>
+        <member name="F:YUTIAN.Tools.ExecSqlConn.commendTimeOut">
+            <summary>
+            超时 300秒
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.AddParamFrKeyField(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            分页存储过程
+            </summary>
+            <param name="TblName">表或视图名</param>
+            <param name="StrGetFields">查询的字段列</param>
+            <param name="FldName"></param>
+            <param name="KeyName">唯一字段</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="PageIndex">当前页数</param>
+            <param name="StrWhere">查询条件</param>
+            <param name="connStr">连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.SqlExecNoquery(System.String,System.String)">
+            <summary>
+            执行无需返回结果的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="connStr">连接字符串</param>
+            <returns>返回相应的比数</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.TSqlExecNoquery(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="SqlStr"></param>
+            <param name="connStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.SqlExecNoquery(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行无需返回结果、带参数的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="connStr">连接字符串</param>
+            <param name="parm">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.TSqlExecNoquery(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行事务
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.SqlExecNoqueryByProcedure(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="SqlStr">存储过程名</param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.SqlExecNoqueryByProcedure(System.String,System.Data.SqlClient.SqlCommand@,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="procedurename">存储过程名</param>
+            <param name="outcmd">输出cmd</param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetDataSet(System.String,System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="connStr">连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetDataSet(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetDataSetByStoredProcedure(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetDataSetByStoredProcedure(System.String,System.String)">
+            <summary>
+            执行不带带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="connStr">连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetDataSetByStoredProcedure(System.String,System.String,System.Int32,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="connStr">连接字符串</param>
+            <param name="timeOuts">超时时间</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetTableList``1(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="TblName"></param>
+            <param name="StrGetFields"></param>
+            <param name="FldName"></param>
+            <param name="KeyName"></param>
+            <param name="PageSize"></param>
+            <param name="PageIndex"></param>
+            <param name="StrWhere"></param>
+            <param name="connStr"></param>
+            <param name="RecordCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetTableList``1(System.String,System.String)">
+            <summary>
+            执行sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="connStr">连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetTableList``1(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的Sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.GetTableListByProcedure``1(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的存储过程，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="connStr">连接字符串</param>
+            <param name="cmdParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.CreateObject``1(System.Data.DataRow)">
+            <summary>
+            将DataRow 转化成实体对象
+            </summary>
+            <typeparam name="T">实体类</typeparam>
+            <param name="dr">数据行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.CreateObject``1(System.Data.DataTable)">
+            <summary>
+            将DataRow 转化成实体对象
+            </summary>
+            <typeparam name="T">实体类</typeparam>
+            <param name="dt">数据表</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.InsertOrUpdateData``1(``0,System.String)">
+            <summary>
+            新增或修改数据表数据
+            </summary>
+            <typeparam name="T">对应要修改或新增的实体类型</typeparam>
+            <param name="_myclass">对应要修改或新增的实体</param>
+            <param name="connStr">连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.InsertOrUpdateData``1(``0,System.String,System.Int32@)">
+            <summary>
+            新增或修改数据表数据
+            </summary>
+            <typeparam name="T">对应要修改或新增的实体类型</typeparam>
+            <param name="_myclass">对应要修改或新增的实体</param>
+            <param name="id">返回id</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSqlConn.CreateSqlOrPam``1(``0,System.String@,System.Data.SqlClient.SqlParameter[]@)">
+            <summary>
+            生成入参
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_myclass"></param>
+            <param name="sqlstr"></param>
+            <param name="pams"></param>
+        </member>
+        <member name="T:YUTIAN.Tools.ExecAcc">
+            <summary>
+            Access 访问方法
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.connstr">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.connstr(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.SqlExecNoquery(System.String)">
+            <summary>
+            执行无需返回结果的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <returns>返回相应的比数</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.SqlExecNoquery(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行无需返回结果、带参数的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="parm">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.GetDataSet(System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.GetDataSet(System.String,System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="sqlconn">数据库连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.GetDataSet(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.GetTableList``1(System.String)">
+            <summary>
+            执行sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.GetTableList``1(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行带参数的Sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="cmdParms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.InsertOrUpdateData``1(``0)">
+            <summary>
+            新增或修改数据表数据
+            </summary>
+            <typeparam name="T">对应要修改或新增的实体类型</typeparam>
+            <param name="_myclass">对应要修改或新增的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.CreateSqlOrPam``1(``0,System.String@,System.Data.OleDb.OleDbParameter[]@)">
+            <summary>
+            生成入参
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_myclass"></param>
+            <param name="sqlstr"></param>
+            <param name="pams"></param>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecAcc.CreateObject``1(System.Data.DataTable)">
+            <summary>
+            将DataTable 转化成实体对象
+            </summary>
+            <typeparam name="T">实体类</typeparam>
+            <param name="dt">数据表</param>
+            <returns></returns>
+        </member>
+        <member name="T:YUTIAN.Tools.ErrorLog">
+            <summary>
+            errorlog 三种，Txt=文本日志、Mail=邮件、System=系统消息（暂未实现）
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.ErrorLog.sendLog(System.Exception,System.String)">
+            <summary>
+            发送log
+            </summary>
+            <param name="e1"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:YUTIAN.Tools.ErrorLog.sendLog(System.Exception,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            发送log
+            </summary>
+            <param name="e1"></param>
+            <param name="msg"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="M:YUTIAN.Tools.ErrorLog.saveTxt(System.Exception,System.String)">
+            <summary>
+            文本日志
+            </summary>
+            <param name="e1"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:YUTIAN.Tools.ErrorLog.sendMail(System.Exception,System.String)">
+            <summary>
+            邮件日志
+            </summary>
+            <param name="e1"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:YUTIAN.Tools.ErrorLog.saveSystem(System.Exception,System.String)">
+            <summary>
+            系统事件日志
+            </summary>
+            <param name="e1"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="T:YUTIAN.Tools.MyFile">
+            <summary>
+            文件操作类
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.ReadFile(System.String)">
+            <summary>
+            读文件内容到stringbuilder
+            </summary>
+            <param name="path">文件路径(相对路径)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.ReadFileToString(System.String)">
+            <summary>
+            读取文件内容到字符串
+            </summary>
+            <param name="absolutePath">文件路径，绝对路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.ReadFileUTF8(System.String)">
+            <summary>
+            读文件内容到stringbuilder（utf8格式）
+            </summary>
+            <param name="path">文件路径（相对路径）</param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.ReadFileToStringUTF8(System.String)">
+            <summary>
+            读文件到字符串（utf8格式）
+            </summary>
+            <param name="absolutePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.saveFile(System.Text.StringBuilder,System.String)">
+            <summary>
+            保存stringbuilder到文件，文件存在则覆盖
+            </summary>
+            <param name="fText">文件内容</param>
+            <param name="fName">文件名，相对路径</param>
+            <returns>1=保存成功；0=发生错误</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.AppendFile(System.Text.StringBuilder,System.String)">
+            <summary>
+            保存stringbuilder到文件，文件存在则附加
+            </summary>
+            <param name="fText">文件内容</param>
+            <param name="fName">文件名，相对路径</param>
+            <returns>1=保存成功；0=发生错误</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.AppendFile(System.String,System.String)">
+            <summary>
+            保存到文件，文件存在则附加
+            </summary>
+            <param name="str">文件内容</param>
+            <param name="fName">文件名，绝对路径</param>
+            <returns>1=保存成功；0=发生错误</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyFile.upfiles(System.Web.UI.HtmlControls.HtmlInputFile,System.String,System.Int64,System.String)">
+            <summary>
+            上传图片返回 0则超过规定大小；1文件格式错误；
+            </summary>
+            <param name="files">文件框名称</param>
+            <param name="paths">上传文件路径，url</param>
+            <param name="fmax">文件的最大值，单位为字节</param>
+            <param name="ftype">类型：1表示图片；0表示所有文件</param>
+            <returns></returns>
+        </member>
+        <member name="T:YUTIAN.Tools.ImagePosition">
+            <summary>
+            水印位置  
+            </summary>
+        </member>
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.LeftTop”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.LeftBottom”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.RightTop”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.RigthBottom”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.TopMiddle”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.BottomMiddle”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:YUTIAN.Tools.ImagePosition.Center”忽略有格式错误的 XML 注释 -->
+        <member name="T:YUTIAN.Tools.MyImage">
+            <summary>
+            处理图片相关方法
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.MyImage.CreateThumbnail(System.String,System.String,System.Int32,System.Int32,System.String)">
+            〈summary>  
+            生成缩略图(jpg格式) 
+            〈/summary>  
+            〈param name="originalImagePath">源图路径（物理路径）〈/param>  
+            〈param name="thumbnailPath">缩略图路径（物理路径）〈/param>  
+            〈param name="width">缩略图宽度〈/param>  
+            〈param name="height">缩略图高度〈/param>  
+            〈param name="mode">生成缩略图的方式 Cut=裁减不变形；其他则根据比例缩放〈/param>      
+        </member>
+        <member name="M:YUTIAN.Tools.MyImage.SetImageToByteArray(System.String)">
+            <summary>
+            将文件转换成流
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyImage.ByteToStream(System.Byte[])">
+            <summary>
+            将byte转换成MemoryStream类型
+            </summary>
+            <param name="mybyte"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:YUTIAN.Tools.MyImage.SetByteToImage(System.Byte[])”忽略有格式错误的 XML 注释 -->
+        <member name="M:YUTIAN.Tools.MyImage.CreateWaterMarkWords(System.String,System.String,System.Single,YUTIAN.Tools.ImagePosition,System.Boolean,System.String@)">
+            <summary>
+             图片上建立文字水印
+            </summary>
+            <param name="sourcePicture">原图片(绝对路径)支持jpg、gif、png、bmp</param>
+            <param name="waterWords">水印文字</param>
+            <param name="alpha">透明度(0.1~1.0之间)</param>
+            <param name="position">文字显示的位置</param>
+            <param name="fRewrite">是否覆盖原图片(如果不覆盖，那么将在同目录下生成一个文件名带0607的文件)</param>
+            <param name="errMsg">返回错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.MyImage.CreateWaterMarkImage(System.String,System.String,System.String,System.Single,YUTIAN.Tools.ImagePosition)">
+            <summary>
+            图片上建立图形水印(均为绝对路径)
+            </summary>
+            <param name="sourcePicture">源图片</param>
+            <param name="waterImage">水印图片</param>
+            <param name="targetImage">目标文件</param>
+            <param name="alpha">透明度(0.1-1.0数值越小透明度越高)</param>
+            <param name="position">位置</param>
+        </member>
+        <member name="T:YUTIAN.Tools.CFun">
+            <summary>
+            一般通用方法类
+            </summary>
+        </member>
+        <member name="F:YUTIAN.Tools.CFun.RandStartDate">
+            <summary>
+            随即数生成开始日期
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.UserRoleTable">
+            <summary>
+            获得后台功能表（过期）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.CutString(System.String,System.Int32)">
+            <summary>
+            截取定长度的字符串
+            </summary>
+            <param name="inputString">原字符串</param>
+            <param name="leng">需要截取的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.Intercept(System.String,System.Int32)">
+            <summary>
+            截取一定数量的字符串
+            </summary>
+            <param name="input"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.cpageSize">
+            <summary>
+            管理后台每页信息数量,默认20
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.pagesize">
+            <summary>
+            前台分页 每页记录数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.pagecount(System.Int32)">
+            <summary>
+            计算分页页数
+            </summary>
+            <param name="recordcount">记录总数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.PageCount(System.Int32,System.Int32)">
+            <summary>
+            计算分页页数
+            </summary>
+            <param name="recordCount">总记录数</param>
+            <param name="pageSize">每页记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RandomWord">
+            <summary>
+            生成随机id
+            </summary>
+            <returns>随机id</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RandomWord(System.Int32)">
+            <summary>
+            生成随即字符串
+            </summary>
+            <param name="sm">获取个数</param>
+            <returns>结果级被，分开的字符串</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RandomWord(System.DateTime)">
+            <summary>
+            5位随机数（4位到种子日期的天数+1位随机数）
+            </summary>
+            <param name="startDate">种子日期 null 或者 大于当前日期时，取默认2010-8-1</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.DESEncrypt(System.String,System.String)">
+            <summary>
+            des加密
+            </summary>
+            <param name="pToEncrypt">需要加密的明文</param>
+            <param name="sKey">6位密钥</param>
+            <returns>密文字符串</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.DESDecrypt(System.String,System.String)">
+            <summary>
+            des解密函数
+            </summary>
+            <param name="pToDecrypt">加密字符串</param>
+            <param name="sKey">6位密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.MD5(System.String)">
+            <summary>
+            MD5函数
+            </summary>
+            <param name="str">原始字符串</param>
+            <returns>MD5结果</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.AlertMeg(System.String,System.String,System.String)">
+            <summary>
+            弹出警告窗口的js脚本
+            </summary>
+            <param name="msg">警告消息</param>
+            <param name="Types">back closePanel closeWindow closeFlowPanel  non </param>
+            <param name="urls">跳转的url</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.AlertMegT(System.String,System.String,System.String)">
+            <summary>
+            弹出警告窗口
+            </summary>
+            <param name="msg">警告消息,空则不警告</param>
+            <param name="Types">back closePanel closeWindow closeFlowPanel closeFlowPanel|关闭div的id non  closeFlowPanelAndFun|方法</param>
+            <param name="urls">跳转的url</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.VerifySQL(System.String)">
+            <summary>
+            过滤sql
+            </summary>
+            <param name="mychar">原始sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RegularIdlist(System.String,System.Boolean)">
+            <summary>
+            格式化逗号分割的数据
+            </summary>
+            <param name="idlist">原始数据</param>
+            <param name="isint">是否是数字类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RequestPamInt(System.String)">
+            <summary>
+            获得int型参数值（GET or POST），没有参数或者格式错误则返回0
+            </summary>
+            <param name="pamkey">参数名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RequestPamInt(System.String,System.Int32)">
+            <summary>
+            获得int型参数值,没有参数或者格式错误则返回0
+            </summary>
+            <param name="pamkey">参数名</param>
+            <param name="types">获取类型 0=GET or 1=POST，默认为POST</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RequestPamStr(System.String)">
+            <summary>
+            获得string类型参数值（GET or POST），没有参数或者格式错误则返回空
+            </summary>
+            <param name="pamkey">参数名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RequestPamStr(System.String,System.Int32)">
+            <summary>
+            获得string类型参数值
+            </summary>
+            <param name="pamkey">参数名</param>
+            <param name="types">获取类型 0=GET or 1=POST，默认为POST</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RequestPamStr(System.String,System.String)">
+            <summary>
+            获得string类型参数值，需要指定类型，不符合类型的返回空
+            </summary>
+            <param name="pamkey">参数名</param>
+            <param name="types">传入数据的类型,date,number,datetime,mobile,email，默认空不检查</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.RequestPamStr(System.String,System.Int32,System.String)">
+            <summary>
+            获得string类型参数值
+            </summary>
+            <param name="PamKey">参数名</param>
+            <param name="FromType">获取类型 0=GET or 1=POST，默认为POST</param>
+            <param name="DataType">数据类型,date,number,datetime,mobile,email，默认空不检查</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.ReadFile(System.String)">
+            <summary>
+            读文件
+            </summary>
+            <param name="path">相对路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.ReadFileUTF8(System.String)">
+            <summary>
+            读utf8文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetCookies(System.String)">
+            <summary>
+            返回单值cookie 的值
+            </summary>
+            <param name="CookieName">cookie名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetCookies(System.String,System.String)">
+            <summary>
+            返回多值cookie的某一个值
+            </summary>
+            <param name="CookieName">cookie名字</param>
+            <param name="KeyName">值名字</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.SaveCookies(System.String,System.String)">
+            <summary>
+            写cookie
+            </summary>
+            <param name="cookieName">cookie名</param>
+            <param name="values">cookie内容</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.SaveCookies(System.String,System.String,System.String)">
+            <summary>
+            写cookie
+            </summary>
+            <param name="cookieName">cookie名</param>
+            <param name="cookieSeName">cookie 键</param>
+            <param name="values">cookie 键值</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetAppStr(System.String)">
+            <summary>
+            获得web.config中配置节的数据
+            </summary>
+            <param name="AppName">配置名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetRemoteIP">
+            <summary>
+            获取远程服务器ip地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetRemoteIPFromAgent">
+            <summary>
+            获取远程服务器ip地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.sendemail(System.String,System.String,System.String,System.String,System.Boolean,System.Text.Encoding)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="from">发件人</param>
+            <param name="sendto">发送到</param>
+            <param name="subject">标题</param>
+            <param name="detail">详情</param>
+            <param name="html">是否是html格式</param>
+            <param name="encod">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.SendEmail(System.String,System.String,System.String,System.String,System.Boolean,System.Text.Encoding)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="from">发件人</param>
+            <param name="sendto">发送到</param>
+            <param name="subject">标题</param>
+            <param name="detail">详情</param>
+            <param name="html">是否是html格式</param>
+            <param name="encod">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.CleanInput(System.String)">
+            <summary>
+            过滤录入框非法内容（已过时）
+            </summary>
+            <param name="strIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.CleanHTML(System.String,System.Int32)">
+            <summary>
+            替换html
+            </summary>
+            <param name="strIn">原始字符串</param>
+            <param name="types">1=script；2=a；3=on事件；4=iframe；5=frameset；6=img；7=p；8=p；9=all</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.PageNav(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            计算分页导航开始页数和结束页数(分页算法)
+            </summary>
+            <param name="recordCount">记录总数</param>
+            <param name="pageSize">每页记录数</param>
+            <param name="cPage">当前页数</param>
+            <param name="totalNav">页面显示的连接数，默认10</param>
+            <param name="startPage">开始页数</param>
+            <param name="endPage">结束页数</param>
+            <param name="pageCount">页总数</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.PageNav(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            计算分页导航开始页数和结束页数(分页算法)
+            </summary>
+            <param name="pageCount">总页数</param>
+            <param name="cPage">当前页数</param>
+            <param name="totalNav">页面显示的连接数，默认10</param>
+            <param name="startPage">开始页数</param>
+            <param name="endPage">结束页数</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.queryjson(System.String,System.String,System.String@,System.String@)">
+            <summary>
+            查询接口（返回字符串）
+            </summary>
+            <param name="jsonurl">查询地址</param>
+            <param name="querystr">查询字符串</param>
+            <param name="responsejson">返回数据</param>
+            <param name="errmsg">错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.queryjson(System.String,System.String,System.String,System.Byte[]@,System.String@)">
+            <summary>
+            查询接口（返回字节数组）
+            </summary>
+            <param name="jsonurl">地址</param>
+            <param name="querystr">查询内容</param>
+            <param name="methods">所用方法(GET/POST)</param>
+            <param name="resp">查询内容</param>
+            <param name="errmsg">返回错误</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.NewCache(System.String,System.Object,System.Double)">
+            <summary>
+            新建cache
+            </summary>
+            <param name="CacheName">cache 名字</param>
+            <param name="obj">cache 对象</param>
+            <param name="CacheTimes">缓存时间，单位小时</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetCache``1(System.String)">
+            <summary>
+            获得cache
+            </summary>
+            <param name="CacheName">cache 名字</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetMultiList(System.Web.UI.WebControls.ListControl)">
+            <summary>
+            获得多选listcontrol 选择值
+            </summary>
+            <param name="listcontrol">多选控件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.SetMultiList(System.Web.UI.WebControls.ListControl,System.String)">
+            <summary>
+            赋值多选 listcontrol 
+            </summary>
+            <param name="listcontrol">多选控件名称</param>
+            <param name="values">多选控件的值只(必须是逗号分割的数据)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl(System.Web.UI.WebControls.ListControl,System.String[],System.Boolean,System.Int32)">
+            <summary>
+            绑定多选列初始化内容
+            </summary>
+            <param name="list">多选列名称</param>
+            <param name="strList">内容数组</param>
+            <param name="needBlack">是否需要空选项</param>
+            /// <param name="selectedIndex">选择第几项</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl(System.Web.UI.WebControls.ListControl,System.String[],System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            绑定多选列初始化内容
+            </summary>
+            <param name="list">多选列名称</param>
+            <param name="strList">内容数组</param>
+            <param name="length">选定数组的前几项数据，从1开始；大于数组长度则全部显示</param>
+            <param name="needBlack">是否需要空选项</param>
+            /// <param name="selectedIndex">选择第几项</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl``1(System.Web.UI.WebControls.ListControl,System.Boolean,System.Int32)">
+            <summary>
+            绑定多选列初始化内容(enum)
+            </summary>
+            <typeparam name="T">enum</typeparam>
+            <param name="list">多选列名称</param>
+            <param name="needBlock">是否需要空选项</param>
+            <param name="selectedIndex">选择第几项</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl``1(System.Web.UI.WebControls.ListControl,System.Boolean,System.Boolean)">
+            <summary>
+            绑定多选列初始化内容(enum)
+            </summary>
+            <typeparam name="T">enum</typeparam>
+            <param name="list">多选列名称</param>
+            <param name="needBlock">是否需要空选项</param>
+            <param name="needSelectedOne">是否选择第一个</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl``1(System.Web.UI.WebControls.ListControl,System.Boolean)">
+            <summary>
+            绑定多选列初始化内容(enum)
+            </summary>
+            <typeparam name="T">enum</typeparam>
+            <param name="list">多选列名称</param>
+            <param name="needBlock">是否需要空选项</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl``1(System.Web.UI.WebControls.ListControl,System.Int32,System.Boolean)">
+            <summary>
+            绑定多选列初始化内容(enum)
+            </summary>
+            <typeparam name="T">enum</typeparam>
+            <param name="list">多选列名称</param>
+            <param name="length">选定枚举的前几项数据，从1开始；大于数组长度则全部显示</param>
+            <param name="needBlock">是否需要空选项</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindListControl(System.Web.UI.WebControls.ListControl,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            绑定多选列初始化内容（数据表）
+            </summary>
+            <param name="list">多选列名称</param>
+            <param name="tableName">数据表名称</param>
+            <param name="textField">用于显示的数据列</param>
+            <param name="valueField">用于选择值的数据列</param>
+            <param name="needBlock">是否需要空白选项</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.BindPageData``1(System.Web.UI.Control,``0)">
+            <summary>
+            支持 绑定textbox、dropdownlist、hidden、radiobuttonlist、label 数据类型上的数据
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="pageContent">页面容器，一般用this</param>
+            <param name="myClass">实体实例</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.bindpagedata``1(System.Web.UI.Control,``0)">
+            <summary>
+            （已过时，请使用BindPageData）仅支持 绑定textbox、dropdownlist、hidden、radiobuttonlist、label 数据类型上的数据
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="_p">页面容器，一般用this</param>
+            <param name="_myclass">实体实例</param>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.getpagedata``1(``0,System.Web.UI.Control)">
+            <summary>
+            (已过时，请使用GetPageData)收集页面数据到类（支持textbox、dropdownlist、hidden、radiobuttonlist）
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="_temp">实体实例</param>
+            <param name="_c">页面容器，一般用this</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetPageData``1(``0,System.Web.UI.Control)">
+            <summary>
+            收集页面数据到类（支持textbox、dropdownlist、hidden、radiobuttonlist）
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="myClass">实体实例</param>
+            <param name="pageContent">页面容器，一般用this</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.strismobile(System.String)">
+            <summary>
+            判断是否移动电话号码(13/15/18)
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.strisemail(System.String)">
+            <summary>
+            判断是否为电子邮箱
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.StrIsNumber(System.String)">
+            <summary>
+            判断是否为数字格式（1-50位）
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.StrIsNumber(System.String,System.Int32)">
+            <summary>
+            判断是否为数字格式
+            </summary>
+            <param name="str">校验字符串</param>
+            <param name="totals">字符串位数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.StrIsDate(System.String)">
+            <summary>
+            判断是否为日期格式（2010-12-31）
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.StrIsDateTime(System.String)">
+            <summary>
+            判断是否为日期时间格式（2010-12-31 00:00:00）
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.StrIsGuid(System.String)">
+            <summary>
+            判断是否为guid字符串
+            </summary>
+            <param name="strSrc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.getdatestring(System.String)">
+            <summary>
+            判断是否是时间格式，如果是则原样返回，如果不是，则返回空（过时，请参考StrIsDte）
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.ConvertToInt(System.Object)">
+            <summary>
+            转换成数字
+            </summary>
+            <param name="intNumb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.ConvertToDecimal(System.Object)">
+            <summary>
+            转换为Decimal类型
+            </summary>
+            <param name="decimalNumb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.googlemapcode">
+            <summary>
+            google 地图 key(过时)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.XmlToString``1(``0)">
+            <summary>
+            对象序列化到xml字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.XmlToObj``1(System.String)">
+            <summary>
+            xml字符串格式化到对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.JsonToString``1(``0)">
+            <summary>
+            对象序列化成json
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj">要序列化的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.JsonToObj``1(System.String)">
+            <summary>
+            还原json对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="jsonString">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.JsonToString``1(System.Collections.Generic.List{``0})">
+            <summary>
+            对象组序列化成json
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="objList">对象组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.JsonCharFilter(System.String)">
+            <summary>
+            json字符串特殊字符过滤
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.Unicode2Chinese(System.String)">
+            <summary>
+            将unicode编码转换成中文
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.Chinese2Unicode(System.String)">
+            <summary>
+            中文转换成unicode 编码
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.DownFile(System.String,System.String,System.String)">
+            <summary>
+            处理下载图片及文件
+            </summary>
+            <param name="fileUrl">下载地址url</param>
+            <param name="localFilePath">本地路径（例如 d:\temp\）</param>
+            <param name="localFileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.ParseInt(System.String)">
+            <summary>
+            字符串转换为整数，格式错误返回0
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.ParseFloat(System.String)">
+            <summary>
+            字符串转换为float，格式错误返回0
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.TimestampToDate(System.String)">
+            <summary>
+            将10/13位时间戳砖换成时间
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetTimeStamp(System.DateTime,System.Boolean)">
+            <summary>
+            获取某个时间的10/13位时间戳
+            </summary>
+            <param name="dateTime"></param>
+            <param name="bFlag">ture 为10位，其他为13位</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.CFun.GetDateTimeDiff(System.DateTime,System.DateTime,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            获取时间差
+            </summary>
+            <param name="startTime">小</param>
+            <param name="endTime">大</param>
+            <param name="days">相差天数</param>
+            <param name="hours">小时数</param>
+            <param name="minitues">分钟数</param>
+        </member>
+        <member name="F:YUTIAN.Tools.ExecSql.commendTimeOut">
+            <summary>
+            超时 300秒
+            </summary>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.AddParamFrKeyField(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            增加参数
+            </summary>
+            <param name="">一些特定参数，如表名，字段名，关键字段等</param>
+            <returns>返回DataSet</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.SqlExecNoquery(System.String)">
+            <summary>
+            执行无需返回结果的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <returns>返回相应的比数</returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.SqlExecNoquery(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行无需返回结果、带参数的sql语句
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="parm">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.TSqlExecNoquery(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行事务
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="cmdParms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.SqlExecNoqueryByProcedure(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="SqlStr">存储过程名</param>
+            <param name="cmdParms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.SqlExecNoqueryByProcedure(System.String,System.Data.SqlClient.SqlCommand@,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="procedurename">存储过程名</param>
+            <param name="outcmd">输出cmd</param>
+            <param name="cmdParms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetDataSet(System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetDataSet(System.String,System.String)">
+            <summary>
+            执行返回ds的查询
+            </summary>
+            <param name="SqlStr">sql语句</param>
+            <param name="sqlconn">数据库连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetDataSet(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetDataSetByStoredProcedure(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetDataSetByStoredProcedure(System.String)">
+            <summary>
+            执行不带参数的查询，返回ds
+            </summary>
+            <param name="SqlStr">sql查询语句</param>
+            <param name="cmdParms">参数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetTableList``1(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="TblName"></param>
+            <param name="StrGetFields"></param>
+            <param name="FldName"></param>
+            <param name="KeyName"></param>
+            <param name="PageSize"></param>
+            <param name="PageIndex"></param>
+            <param name="StrWhere"></param>
+            <param name="RecordCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetTableList``1(System.String)">
+            <summary>
+            执行sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetTableList``1(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的Sql语句，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="cmdParms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.GetTableListByProcedure``1(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行带参数的存储过程，返回实体对象组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SqlStr"></param>
+            <param name="cmdParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.CreateObject``1(System.Data.DataRow)">
+            <summary>
+            将DataRow 转化成实体对象
+            </summary>
+            <typeparam name="T">实体类</typeparam>
+            <param name="dr">数据行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.CreateObject``1(System.Data.DataTable)">
+            <summary>
+            将DataTable 转化成实体对象
+            </summary>
+            <typeparam name="T">实体类</typeparam>
+            <param name="dt">数据表</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.InsertOrUpdateData``1(``0)">
+            <summary>
+            新增或修改数据表数据
+            </summary>
+            <typeparam name="T">对应要修改或新增的实体类型</typeparam>
+            <param name="_myclass">对应要修改或新增的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.InsertOrUpdateData``1(``0,System.Int32@)">
+            <summary>
+            新增或修改数据表数据
+            </summary>
+            <typeparam name="T">对应要修改或新增的实体类型</typeparam>
+            <param name="_myclass">对应要修改或新增的实体</param>
+            <param name="id">返回id</param>
+            <returns></returns>
+        </member>
+        <member name="M:YUTIAN.Tools.ExecSql.CreateSqlOrPam``1(``0,System.String@,System.Data.SqlClient.SqlParameter[]@)">
+            <summary>
+            生成入参
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_myclass"></param>
+            <param name="sqlstr"></param>
+            <param name="pams"></param>
+        </member>
+    </members>
+</doc>
